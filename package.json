@@ -1,5 +1,5 @@
 {
-  "name": "AutoMatchFormat",
+  "name": "auto-match-format",
 	"displayName": "AutoMatchFormat",
 	"description": "无需手动设置vscode settings配置, 保存文件后自动匹配项目内部的eslint规则格式化",
 	"version": "0.0.1",
@@ -10,7 +10,7 @@
 		"Other"
 	],
 	"activationEvents": [
-    "onCommand:AutoMatchFormat.helloWorld"
+    "onCommand:AutoMatchFormat.AutoMatchFormat"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -30,11 +30,26 @@
             }
         }
     },
+    "menus": {
+      "editor/context": [
+          {
+              "when": "editorFocus",
+              "command": "AutoMatchFormat",
+              "group": "navigation"
+          }
+      ],
+      "explorer/context": [
+          {
+              "command": "AutoMatchFormat",
+              "group": "navigation"
+          }
+      ]
+    },
 		"commands": [
 			{
-				"command": "AutoMatchFormat.helloWorld",
-				"title": "Hello World Test Commond",
-        "category": "Hello"
+				"command": "AutoMatchFormat",
+				"title": "Auto Match Format",
+        "category": "Eslint"
 			}
 		]
 	},
